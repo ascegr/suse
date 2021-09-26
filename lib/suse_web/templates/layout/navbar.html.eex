@@ -1,0 +1,14 @@
+<div class="relative bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+            <div class="flex justify-start lg:w-0 lg:flex-1">
+                <%= link to: "/" do %>
+                    <%= img_tag Routes.static_path(@conn, "/images/logo.png"), class: "h-12 w-auto sm:h-14", width: 64 %>
+                <% end %>
+            </div>
+            <div class="md:flex items-center justify-end md:flex-1 lg:w-0">
+                <%= link "Shorten URL", to: "/", class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700" %>
+            </div>
+        </div>
+    </div>
+</div>

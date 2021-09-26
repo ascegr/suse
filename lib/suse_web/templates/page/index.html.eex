@@ -1,38 +1,35 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>Peace of mind from prototype to production</p>
-</section>
-
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.5/CHANGELOG.md">v1.5 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-      <li>
-        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
-      </li>
-    </ul>
-  </article>
-</section>
+<div class="bg-white py-16 sm:py-24">
+  <div class="relative sm:py-16">
+    <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+      <div class="relative rounded-2xl px-6 py-10 bg-blue-800 overflow-hidden shadow-xl sm:px-12 sm:py-20">
+        <div class="relative">
+          <div class="sm:text-center">
+            <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
+                Welcome to STORD URL Shortener Exercise (SUSE)
+            </h2>
+            <p class="mt-6 mx-auto max-w-2xl text-lg text-indigo-200">
+                Enter a valid URL below, starting with http:// or https:// to get a short url using our service.
+            </p>
+          </div>
+          <form action="#" class="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
+            <div class="min-w-0 flex-1">
+              <label for="long-url" class="sr-only">Long URL</label>
+              <input
+                  id="long-url"
+                  type="text"
+                  class="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
+                  placeholder="Long URL">
+            </div>
+            <div class="mt-4 sm:mt-0 sm:ml-3">
+                <button
+                    type="submit"
+                    class="block w-full rounded-md border border-transparent px-5 py-3 bg-white text-base font-medium text-blue-500 shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 sm:px-10">
+                    Shorten URL
+                </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
