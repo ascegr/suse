@@ -1,0 +1,32 @@
+<div class="bg-white py-16 sm:py-24">
+  <div class="relative sm:py-16">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div class="relative rounded-2xl px-6 py-10 bg-blue-800 overflow-hidden shadow-xl sm:px-12 sm:py-20">
+        <div class="relative">
+          <div class="sm:text-center">
+            <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
+                Welcome to STORD URL Shortener Exercise (SUSE)!
+            </h2>
+            <p class="mt-6 mx-auto max-w-3xl text-lg text-indigo-200">
+                Enter a valid URL below, starting with http:// or https:// to get a short url using our service.
+            </p>
+          </div>
+          <%= f = form_for(@conn, Routes.url_path(@conn, :create), id: "form-long-url", class: "mt-12 sm:mx-auto sm:max-w-3xl sm:flex") %>
+          <div class="min-w-0 flex-1">
+              <label for="long_url" class="sr-only">Long URL</label>
+              <%= text_input f, :long_url, type: "url", class: "form-input", placeholder: "http(s)://" %>
+          </div>
+          <div class="mt-4 sm:mt-0 sm:ml-3">
+              <%= submit "Shorten URL", class: "form-button" %>
+          </div>
+          </form>
+        </div>
+        <%= if @display do %>
+        <div class="mx-auto max-w-3xl bg-blue-100 rounded p-4 mt-2 text-sm text-red-500">
+            <%= @display %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

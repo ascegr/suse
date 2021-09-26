@@ -16,7 +16,9 @@ defmodule SuseWeb.Router do
   scope "/", SuseWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", UrlController, :index
+    post "/urls", UrlController, :create
+    get "/urls/:id", UrlController, :show
   end
 
   # Other scopes may use custom stacks.

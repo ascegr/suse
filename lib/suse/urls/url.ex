@@ -3,8 +3,6 @@ defmodule Suse.Urls.Url do
 
   import Ecto.Changeset
 
-  alias Suse.SlugGenerator
-
   schema "urls" do
     field :long_url, :string
     field :slug, :string
@@ -16,12 +14,9 @@ defmodule Suse.Urls.Url do
 
   def changeset(url, attrs) do
     url
-    |> cast(attrs, [:long_url])
+    |> cast(attrs, [:long_url, :slug])
+    |> validate_required([:long_url, :slug])
     |> validate_format(:long_url, ~r/^(http|https):\/\//, message: @link_format_error_msg)
-    |> put_slug()
-  end
-
-  defp put_slug(changeset) do
-    put_change(changeset, :slug, SlugGenerator.generate())
+    |> validate_format(:slug, ~r/([a-zA-Z0-9]{7})/)
   end
 end

@@ -1,7 +1,7 @@
-defmodule Suse.SlugGeneratorTest do
+defmodule Suse.Urls.SlugGeneratorTest do
   use Suse.DataCase
 
-  alias Suse.SlugGenerator
+  alias Suse.Urls.SlugGenerator
 
   describe "generate/0" do
     test "returns a random string" do

@@ -1,4 +1,4 @@
-defmodule Suse.SlugGenerator do
+defmodule Suse.Urls.SlugGenerator do
   @moduledoc """
   This module is responsible for generating a random string
   that consists of small letters, large letters and numbers.

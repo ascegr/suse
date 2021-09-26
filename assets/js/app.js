@@ -13,3 +13,21 @@ import "../css/app.scss"
 //     import socket from "./socket"
 //
 import "phoenix_html"
+
+const copyUrlButton = document.querySelector("#copy-url-button")
+const shortUrl = document.querySelector("#short-url")
+const copiedText = document.querySelector("#copied-text")
+
+const updateClipboard = (text) => {
+  navigator.clipboard.writeText(text).then(() => {
+    copiedText.classList.remove("hidden")
+  }, (err) => {
+    console.log(err)
+  })
+}
+
+if (copyUrlButton) {
+  copyUrlButton.addEventListener("click", () => {
+    updateClipboard(shortUrl.innerText)
+  })
+}
