@@ -58,4 +58,21 @@ defmodule SuseWeb.UrlControllerTest do
       assert html_response(conn, 200) =~ "id=\"copy-url-button\""
     end
   end
+
+  describe "GET /:slug" do
+    test "with a non valid slug, redirects to root page", %{conn: conn} do
+      conn = get(conn, Routes.url_path(conn, :redirect_by_slug, "abc0123"))
+      assert redirected_to(conn) == Routes.url_path(conn, :index)
+    end
+
+    test "with a valid slug, shows a redirection page", %{conn: conn} do
+      slug = SlugGenerator.generate()
+      long_url = "https://suse.stord.com/long/url/path"
+      url = %Url{long_url: long_url, slug: slug}
+      Repo.insert!(url)
+
+      conn = get(conn, Routes.url_path(conn, :redirect_by_slug, slug))
+      assert redirected_to(conn) =~ long_url
+    end
+  end
 end

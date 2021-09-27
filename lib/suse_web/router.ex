@@ -19,6 +19,7 @@ defmodule SuseWeb.Router do
     get "/", UrlController, :index
     post "/urls", UrlController, :create
     get "/urls/:id", UrlController, :show
+    get "/:slug", UrlController, :redirect_by_slug
   end
 
   # Other scopes may use custom stacks.

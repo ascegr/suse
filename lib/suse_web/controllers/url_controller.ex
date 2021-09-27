@@ -29,4 +29,14 @@ defmodule SuseWeb.UrlController do
         render(conn, "show.html", url: url)
     end
   end
+
+  def redirect_by_slug(conn, %{"slug" => slug}) do
+    case Urls.get_by_slug(slug) do
+      {:ok, url} ->
+        redirect(conn, external: url.long_url)
+
+      {:error, :url_not_found} ->
+        redirect(conn, to: Routes.url_path(conn, :index))
+    end
+  end
 end
