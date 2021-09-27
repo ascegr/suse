@@ -1,5 +1,19 @@
-defmodule SuseWeb.UrlView do
+defmodule SuseWeb.Api.UrlView do
   use SuseWeb, :view
+
+  def render("create.json", %{url: url}) do
+    %{
+      status: :created,
+      url: url_with_domain(url)
+    }
+  end
+
+  def render("create.json", %{error: reason}) do
+    %{
+      status: :error,
+      error: reason
+    }
+  end
 
   defp url_with_domain(%{slug: slug}) do
     "#{get_current_domain()}/#{slug}"

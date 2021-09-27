@@ -8,7 +8,7 @@ defmodule SuseWeb.UrlControllerTest do
   describe "GET /" do
     test "has welcome text", %{conn: conn} do
       conn = get(conn, "/")
-      assert html_response(conn, 200) =~ "Welcome to STORD URL Shortener Exercise"
+      assert html_response(conn, 200) =~ "Welcome to Super URL Shortener Exercise"
     end
 
     test "has a url form with only the long url field", %{conn: conn} do
@@ -73,6 +73,13 @@ defmodule SuseWeb.UrlControllerTest do
 
       conn = get(conn, Routes.url_path(conn, :redirect_by_slug, slug))
       assert redirected_to(conn) =~ long_url
+    end
+  end
+
+  describe "GET /react" do
+    test "mounts the react app", %{conn: conn} do
+      conn = get(conn, Routes.url_path(conn, :react))
+      assert html_response(conn, 200) =~ "<x-application"
     end
   end
 end

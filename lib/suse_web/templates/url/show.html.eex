@@ -13,7 +13,7 @@
                                 <%= img_tag Routes.static_path(@conn, "/images/clipboard.svg") %>
                             </button>
                         </div>
-                        <p class="p-4 ">
+                        <p class="p-4">
                             <span id="copied-text" class="hidden text-white rounded">
                                 URL has been copied!
                             </span>

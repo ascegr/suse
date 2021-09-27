@@ -7,8 +7,12 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.14.5",
     "phoenix": "file:../deps/phoenix",
-    "phoenix_html": "file:../deps/phoenix_html"
+    "phoenix_html": "file:../deps/phoenix_html",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "remount": "^0.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -27,7 +31,7 @@
     "sass-loader": "^8.0.2",
     "tailwindcss": "^2.2.15",
     "terser-webpack-plugin": "^2.3.2",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.2"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   }
 }

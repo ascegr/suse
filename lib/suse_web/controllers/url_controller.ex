@@ -30,6 +30,11 @@ defmodule SuseWeb.UrlController do
     end
   end
 
+  def react(conn, _) do
+    props = Jason.encode!(%{error: nil, url: nil})
+    render(conn, "react.html", props: props)
+  end
+
   def redirect_by_slug(conn, %{"slug" => slug}) do
     case Urls.get_by_slug(slug) do
       {:ok, url} ->

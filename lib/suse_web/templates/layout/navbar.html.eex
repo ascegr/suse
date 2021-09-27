@@ -7,7 +7,14 @@
                 <% end %>
             </div>
             <div class="md:flex items-center justify-end md:flex-1 lg:w-0">
-                <%= link "Shorten URL", to: "/", class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700" %>
+                <%= link to: "/react", class: "ml-8 whitespace-nowrap text-indigo-200 rounded inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700" do %>
+                    <%= img_tag Routes.static_path(@conn, "/images/react.svg"), class: "w-8" %>
+                    <span class="sr-only">Shorten URL (React)</span>
+                <% end %>
+                <%= link to: "/", class: "ml-8 whitespace-nowrap text-indigo-200 rounded inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700" do %>
+                    <%= img_tag Routes.static_path(@conn, "/images/phoenix.svg"), class: "w-8" %>
+                    <span class="sr-only">Shorten URL</span>
+                <% end %>
             </div>
         </div>
     </div>

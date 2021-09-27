@@ -17,15 +17,18 @@ defmodule SuseWeb.Router do
     pipe_through :browser
 
     get "/", UrlController, :index
+    get "/react", UrlController, :react
     post "/urls", UrlController, :create
     get "/urls/:id", UrlController, :show
     get "/:slug", UrlController, :redirect_by_slug
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", SuseWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", SuseWeb.Api do
+    pipe_through :api
+
+    post "/urls", UrlController, :create
+  end
 
   # Enables LiveDashboard only for development
   #

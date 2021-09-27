@@ -13,6 +13,7 @@ import "../css/app.scss"
 //     import socket from "./socket"
 //
 import "phoenix_html"
+import "./react/Index.js"
 
 const copyUrlButton = document.querySelector("#copy-url-button")
 const shortUrl = document.querySelector("#short-url")
