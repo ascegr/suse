@@ -13,11 +13,14 @@
                                 <%= img_tag Routes.static_path(@conn, "/images/clipboard.svg") %>
                             </button>
                         </div>
-                        <p class="p-4">
-                            <span id="copied-text" class="hidden text-white rounded">
+                        <p class="flex flex-col p-4 items-center">
+                            <span id="copied-text" class="hidden align-center text-white rounded">
                                 URL has been copied!
                             </span>
                         </p>
+                        <div class='flex flex-col items-center'>
+                            <%= link "Shorten another URL", to: Routes.url_path(@conn, :index), class: "form-button md:w-max" %>
+                        </div>
                     </div>
                 </div>
             </div>

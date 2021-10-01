@@ -14,7 +14,7 @@
                     <%= f = form_for(@conn, Routes.url_path(@conn, :create), id: "form-long-url", class: "mt-12 sm:mx-auto sm:max-w-3xl sm:flex") %>
                       <div class="min-w-0 flex-1">
                           <label for="long_url" class="sr-only">Long URL</label>
-                          <%= text_input f, :long_url, type: "url", class: "form-input", placeholder: "http(s)://" %>
+                          <%= text_input f, :long_url, type: "text", class: "form-input", placeholder: "http(s)://" %>
                       </div>
                       <div class="mt-4 sm:mt-0 sm:ml-3">
                           <%= submit "Shorten URL", class: "form-button" %>
