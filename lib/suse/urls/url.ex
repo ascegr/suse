@@ -1,4 +1,8 @@
 defmodule Suse.Urls.Url do
+  @moduledoc """
+  Url schema module
+  """
+
   use Ecto.Schema
 
   import Ecto.Changeset

@@ -1,7 +1,13 @@
 defmodule Suse.Urls do
+  @moduledoc """
+  Urls Context Module
+
+  This module is responsible for all actions on the Url schema
+  that we use in the database to store the shortened urls.
+  """
   alias Suse.Repo
-  alias Suse.Urls.Url
   alias Suse.Urls.SlugGenerator
+  alias Suse.Urls.Url
 
   def change(params \\ %{}) do
     Url.changeset(%Url{}, params)
