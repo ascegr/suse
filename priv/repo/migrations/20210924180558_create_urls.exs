@@ -8,5 +8,7 @@ defmodule Suse.Repo.Migrations.CreateUrls do
 
       timestamps()
     end
+
+    create unique_index(:urls, [:slug])
   end
 end

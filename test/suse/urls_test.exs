@@ -36,6 +36,16 @@ defmodule Suse.UrlsTest do
       assert {:error, %Changeset{errors: errors}} = Urls.create(%{"long_url" => long_url})
       assert [{:long_url, {^message, [validation: :format]}}] = errors
     end
+
+    test "if the slug has been reused, try to recreate with a new one" do
+      long_url = "http://suse.stord.com/long/url/path"
+      slug = SlugGenerator.generate()
+      url = %Url{long_url: long_url, slug: slug}
+      Repo.insert!(url)
+
+      assert {:ok, %{slug: new_slug}} = Urls.create(%{"long_url" => long_url, "slug" => slug})
+      refute new_slug == slug
+    end
   end
 
   describe "get_by_slug/1" do

@@ -3,6 +3,8 @@ defmodule SuseWeb.UrlController do
 
   alias Suse.Urls
 
+  require Logger
+
   def index(conn, _) do
     changeset = Urls.change()
     render(conn, "index.html", changeset: changeset, display: nil)
@@ -21,6 +23,8 @@ defmodule SuseWeb.UrlController do
   def show(conn, %{"id" => id}) do
     case Urls.get(id) do
       nil ->
+        Logger.error("Url not found", id: id)
+
         conn
         |> put_flash(:error, "Url not found")
         |> redirect(to: Routes.url_path(conn, :index))

@@ -20,6 +20,7 @@ defmodule Suse.Urls.Url do
     url
     |> cast(attrs, [:long_url, :slug])
     |> validate_required([:long_url, :slug])
+    |> unique_constraint(:slug)
     |> validate_format(:long_url, ~r/^(http|https):\/\//, message: @link_format_error_msg)
     |> validate_format(:slug, ~r/([a-zA-Z0-9]{7})/)
   end
